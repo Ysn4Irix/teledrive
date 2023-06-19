@@ -24,8 +24,8 @@ echo "Generating .env file..."
   echo "TG_API_ID=$TG_API_ID" >> docker/.env
   echo "TG_API_HASH=$TG_API_HASH" >> docker/.env
   echo "ADMIN_USERNAME=$ADMIN_USERNAME" >> docker/.env
-  export DATABASE_URL=postgresql://postgres:$DB_PASSWORD@db:5432/teledrive
-  echo "DB_PASSWORD=$DB_PASSWORD" >> docker/.env
+  export DATABASE_URL=postgresql://acoder:$DB_PASSWORD@srv-captain--teledrive-pdb:5432/teledrive
+echo "DB_PASSWORD=$DB_PASSWORD" >> docker/.env
 fi
 
 git reset --hard
@@ -36,5 +36,5 @@ export $(cat docker/.env | xargs)
 
 echo
 echo "Build and deploy to CapRover..."
-docker build --build-arg REACT_APP_TG_API_ID=$TG_API_ID --build-arg REACT_APP_TG_API_HASH=$TG_API_HASH -t myapp .
-caprover deploy --appName myapp --imageName myapp
+docker build --build-arg REACT_APP_TG_API_ID=$TG_API_ID --build-arg REACT_APP_TG_API_HASH=$TG_API_HASH -t teledrive .
+caprover deploy --appName teledrive --imageName teledrive
