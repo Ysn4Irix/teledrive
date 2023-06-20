@@ -24,7 +24,7 @@ echo "Generating .env file..."
   echo "TG_API_ID=$TG_API_ID" >> docker/.env
   echo "TG_API_HASH=$TG_API_HASH" >> docker/.env
   echo "ADMIN_USERNAME=$ADMIN_USERNAME" >> docker/.env
-  export DATABASE_URL=postgresql://postgres:$DB_PASSWORD@db:5432/teledrive
+  export DATABASE_URL=postgresql://acoder:$DB_PASSWORD@srv-captain--teledrive-pdb:5432/teledrive
 echo "DB_PASSWORD=$DB_PASSWORD" >> docker/.env
 fi
 
